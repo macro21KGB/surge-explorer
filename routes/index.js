@@ -5,7 +5,7 @@ var surgeUtil = require("../utils")
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
-  res.render('index', { projects: ["test.surge.sh", "test2.surge.sh"] });
+  res.render('index', { projects: await surgeUtil.getSurgeProjects(), username: await surgeUtil.getSurgeUsername() });
 });
 
 

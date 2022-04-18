@@ -68,6 +68,21 @@ const getSurgeProjects = async () => {
 }
 
 
+const teardownSite = async (name) => {
+    // Get the list of projects from surge
+    const surgeOutput = await new Promise((resolve, reject) => {
+        process.exec(`surge teardown ${name}`, (error, stdout, _) => {
+            if (error) {
+                reject(error);
+                return false;
+            }
+            resolve(stdout);
+        });
+    });
+
+    return true;
+}
+
 module.exports = {
     getSurgeUsername,
     checkIfSurgeIsInstalled,

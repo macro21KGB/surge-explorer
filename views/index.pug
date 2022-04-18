@@ -1,7 +1,9 @@
 mixin item(name)
-    h1= name
-    a(href= `https://${name}`)= 'Click me'
-    p= 'This is a paragraph'
+  .item
+    p= name
+    .buttons
+      a.go(href= `https://${name}` target="__blank")= 'GO'
+      //- a.delete(href= `/api/teardown/${name}`)= 'Del'
 
 doctype html
 html(lang="en")
@@ -9,16 +11,20 @@ html(lang="en")
     title= "Surge Explorer"
     link(rel="stylesheet", href="stylesheets/style.css")
   body
-    h1 Pug - node template engine
+    .navbar(style={padding: '0.5rem 1em'})
+      h1(style={color: 'gray', }) Surge 
+        span(style={color: 'black'}) Explorer
     #container
         .sidebar
-            p Sidebar
+          .info
+            p Welcome
+            h1= `${username}`
+          .info
+            p Project Count
+            h1= `${projects.length}`
         .main
-            
             each project in projects
-                .item
-                    p #{project}
-                    +item(project)
+              +item(project)
 
 
 

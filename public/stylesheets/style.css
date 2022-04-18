@@ -1,8 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+html,
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+}
+
+#container {
+  padding: 0.2rem;
+  display: flex;
+}
+
+/* BUTTONS */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+  text-decoration: none;
+  width: 40px;
+  margin: 0;
+  height: 40px;
+  border-radius: 8px;
+
+  /* FLEX OPTIONS */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.go {
+  background-color: #40ACC3;
+}
+
+.delete {
+  background-color: #E13939;
+}
+
+/* ITEM */
+
+.item {
+  padding: 0.5rem;
+  display: flex;
+  border-bottom: 1px solid #E5E5E5;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.155);
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+
+.sidebar {
+  flex: 0.5;
+  padding: 0.5rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.262);
+  text-align: center;
+}
+
+.main {
+  padding: 0.5rem;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.info {
+  border: 1px solid rgba(128, 128, 128, 0.189);
+  border-radius: 3px;
+  margin-bottom: 0.2rem;
 }

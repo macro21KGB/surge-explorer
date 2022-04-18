@@ -17,4 +17,10 @@ router.get('/getProjects', async function (req, res, next) {
     res.json({ data: await surgeUtil.getSurgeProjects(), error: null });
 });
 
+router.get('/teardown/:id', async function (req, res, next) {
+    const result = req.params.id;
+    res.json({ data: result, error: null });
+});
+
+
 module.exports = router;
